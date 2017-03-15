@@ -10,3 +10,7 @@ We have a
 but it can't currently build derivations. The idea is to make it fully nix compatible.
 
 ## Define and document API to nix-daemon
+
+## Graphical installer for NixOS
+
+Automated partition setup and other fancy stuff.
