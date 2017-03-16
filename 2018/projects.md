@@ -14,3 +14,9 @@ but it can't currently build derivations. The idea is to make it fully nix compa
 ## Graphical installer for NixOS
 
 Automated partition setup and other fancy stuff.
+
+
+## langserver.org implementation for nix
+
+http://langserver.org/ - would solve a bunch of IDE problems, though
+not indentation and syntax highlighting. Might be too complicated.
