@@ -100,3 +100,14 @@ installer to not reinvent partitioning
 
 http://langserver.org/ - would solve a bunch of IDE problems, though
 not indentation and syntax highlighting. Might be too complicated.
+
+## Private files in the nix store
+
+Currently, all files in the nix store are world-readable, which means that NixOS
+configurations that need passwords or other credentials need to point to paths
+outside of the store. It would be awesome if we could come up with a principled
+way to fix this limitation.
+
+Some discussion and existing work on the issue can be found at:
+https://github.com/NixOS/nix/issues/8
+
