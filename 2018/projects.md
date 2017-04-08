@@ -158,3 +158,19 @@ sharing that state would allow multiple users to manage the same deployments
 from their own machines.
 
 
+## Improvements
+
+### Improve Nix and rewrite Perl scripts in C++
+
+Currently Nix as a tool could use some improvement, there are many issues and
+basic features that should be worked on:
+
+* Getting rid of Perl dependency
+* Inline docstring support
+* Support for channel authentication (http simple authentication)
+* Package query caching
+* More user friendly and modern interface and output (with colors)
+* Support for channel generation with one command
+* Bindings for other languages
+* More sane defaults
+
