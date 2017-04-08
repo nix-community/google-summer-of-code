@@ -82,6 +82,30 @@ but not limited to:
 * Localization of ~100 package descriptions.
 * Localization of ~100 NixOS options.
 
+## Peer-to-Peer substitutes
+
+In general, Linux distributions have multiple mirrors to provide backup for
+sources / binaries. Nix has a model which gives it the possibility to ask
+trusted remote (or signed files from untrusted sources) about the hash of the
+build output for one derivation (recipe), and then the binary can be downloaded
+from any untrusted source. Being able to download a binary from any source
+implies that we do not have to rely on mirrors for downloading the build
+results, and that we can use decentralized ideas, such as P2P networks. Another
+issue, inherent with this, is to ensure that we have anonymity among the persons
+of such network. Not having anonymity implies that an attacker can use such
+network to analyze if a server is vulnerable because it is using an outdated
+version of bash / openssl.
+
+A decentralized and anonymized P2P would help by:
+
+* Making popular packages/versions persistent.
+* Improve download speed, even from China (no need to "sneakernet").
+* Reduce load from cache.nixos.org .
+
+The goal of this project, is to create a new binary substitute based on a
+decentralize and anonymized P2P, such as Tribler, which serve the content of the
+nix store to other Nix users.
+
 ## Graphical and text-mode installers for NixOS
 
 Currently, NixOS doesn't have any automatic, fancy installer. The goal would be
