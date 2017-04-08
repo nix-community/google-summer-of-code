@@ -59,6 +59,29 @@ expanding deterministic builds.
   the Nixpkgs/NixOS manual are fine. Finally, it's possible in the process we'll
   need to work with upstreams or incorporate patches to our core utilities.
 
+## Localization
+
+Nix / NixOS / NixOps are getting a lot of attention, unfortunately all the
+documentation which exists so far is in English. The purpose of this project is
+to add infrastructure for localizing all the documentation of Nix, NixOS and
+NixOps. Currently a large part of the documentation is in Docbook format, and
+the rest is embedded in Nix expression files.
+
+What should be done during this project is:
+
+* Make tools to extract to language file for English
+* Make the language file readable by Nix, such that all packages (Nixpkgs) meta
+  attributes are localized, as well as all options descriptions (NixOS).
+* Package tools for localizing Nix / NixOS.
+* Document the process for localizing, and how to keep a local up-to-date.
+
+At the end we should at least have a proof of concept in one locale, including
+but not limited to:
+
+* Localization of NixOS Introduction chapter.
+* Localization of ~100 package descriptions.
+* Localization of ~100 NixOS options.
+
 ## Graphical and text-mode installers for NixOS
 
 Currently, NixOS doesn't have any automatic, fancy installer. The goal would be
