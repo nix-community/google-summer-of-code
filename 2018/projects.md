@@ -135,3 +135,18 @@ way to fix this limitation.
 Some discussion and existing work on the issue can be found at:
 https://github.com/NixOS/nix/issues/8
 
+## Multiple outputs infrastructure in nixpkgs
+
+Nix has a feature known as "multiple outputs", where a single derivation can
+produce multiple outputs which can be downloaded and garbage-collected
+independently. So for example, glibc might have one output containing the
+libraries and another containing the headers, and most users would only need the
+libraries and would only need to download the headers when performing a
+build. Judicious use of this feature could greatly reduce the size of closures
+of various packages/the system configuration. Coming up with a good general way
+for "normal-case" packages in nixpkgs to take advantage of this would be a great
+benefit.
+
+Note: This has already been partially done in the closure-size branch:
+https://github.com/NixOS/nixpkgs/pull/7701
+
