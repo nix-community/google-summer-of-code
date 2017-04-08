@@ -150,3 +150,11 @@ benefit.
 Note: This has already been partially done in the closure-size branch:
 https://github.com/NixOS/nixpkgs/pull/7701
 
+## Distributed nixops deployments
+
+Currently NixOps state is all stored in a local sqlite database, so all
+deployment has to be managed from one central machine. A good mechanism for
+sharing that state would allow multiple users to manage the same deployments
+from their own machines.
+
+
