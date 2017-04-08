@@ -186,3 +186,31 @@ Nix expressions or Nix builds. Some ideas that might be worth exploring:
 * Fix some instances of reading entire files into memory instead of streaming
 * For the ambitious: multithreaded evaluation and/or building.
 
+### Improve nix-build output for post-processing
+
+When building (using nix-build), the standard out and error output are merged
+and captured into build log files under /nix/var/log. Nix injects escape codes
+to indicate actions but otherwise leaves things as-is.
+
+It would be great if there was an out-of-band mechanism to indicate Nix
+messages, standard output and standard error of a build. Build output is mostly
+line-based, so one way would be to leave stdout untouched, and add `{E}` in
+front of lines coming in from stderr, and `{N}` for nix-build messages. If a
+stdout line begins with `{` it could be escaped with `{O}`. Some care can be
+taken for builds that don't print newlines to e.g. indicate progress but have
+interjections from stderr.
+
+Another option is to prefix each line with the delta in milliseconds since the
+last line of the stream, and mark stderr and nix outputs differently (e.g. "5 "
+vs "E5 " vs "N5 ").
+
+A logical next step would be to have nix-build not show output until an error
+occurs, or to show a running tail of all builds, each in their own screen area.
+
+One further refinement would be allowing the builder to output out-of-band
+messages, to indicate the current build phase for example. This would come in as
+a stderr line starting with e.g. `{N}phase:configurePhase`.
+
+The overall goal would be to make building from source more approachable and
+more amenable to debug.
+
