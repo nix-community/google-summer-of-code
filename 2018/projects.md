@@ -239,3 +239,14 @@ Other improvements would include:
 (The same as Python above, for every major programming language in need of some
 improvement, *mutatis mutandis*)
 
+## Promote independence from systemd
+
+Systemd is a hot, polemical, flamewar-prone topic. There is a lot of criticism
+about it, mainly about being bloated and hard to maintain. And arguably systemd
+goes against the underlying functional philosophy of NixOS. There is some
+discussion on the mailing list about that:
+http://lists.science.uu.nl/pipermail/nix-dev/2014-December/015361.html
+
+The goal of that subject is to promote independence of systemd, and using some
+sane default as s6 or even Gentoo's OpenRC suite.
+
