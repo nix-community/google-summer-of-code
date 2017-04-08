@@ -250,3 +250,10 @@ http://lists.science.uu.nl/pipermail/nix-dev/2014-December/015361.html
 The goal of that subject is to promote independence of systemd, and using some
 sane default as s6 or even Gentoo's OpenRC suite.
 
+## NixOS-kFreeBSD
+
+Port Nix and Nixpkgs for other Unix-like open source systems would be a good
+stress-test and also a way to popularize it. In a more ambitious goal, we can do
+something as Gentoo and Debian already did, porting a whole system above FreeBSD
+kernel.
+
