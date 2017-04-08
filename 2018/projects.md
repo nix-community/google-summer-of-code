@@ -11,7 +11,6 @@ but it can't currently build derivations. The idea is to make it fully nix compa
 
 ## Define and document API to nix-daemon
 
-## Graphical installer for NixOS
 ## Deterministic Builds
 
 Nixpkgs has a great feature where every build is reproducible, which means that
@@ -60,9 +59,19 @@ expanding deterministic builds.
   the Nixpkgs/NixOS manual are fine. Finally, it's possible in the process we'll
   need to work with upstreams or incorporate patches to our core utilities.
 
+## Graphical and text-mode installers for NixOS
 
-Automated partition setup and other fancy stuff.
+Currently, NixOS doesn't have any automatic, fancy installer. The goal would be
+to create a minimal one, that does:
 
+* Partition the hard drive
+* Expose some basic configuration options from configuration.nix, things like
+creating users and selecting desktop environments
+    * Maybe a more advanced mode for selecting servers like OpenSSH
+* Install NixOS via `nixos-install`
+
+**Note**: it might be worth adapting existing code base of an already existent
+installer to not reinvent partitioning
 
 ## langserver.org implementation for nix
 
