@@ -174,3 +174,15 @@ basic features that should be worked on:
 * Bindings for other languages
 * More sane defaults
 
+### Low-level improvements to nix performance
+
+There may be some low-hanging fruit for improving performance of evaluation of
+Nix expressions or Nix builds. Some ideas that might be worth exploring:
+
+* Using lazy cons/nil lists instead of vectors for the list data type (and
+  updating general list functions in the nixpkgs lib accordingly)
+* Replacing .drv files, a potential IO bottleneck, with a purely in-memory
+  representation of derivations
+* Fix some instances of reading entire files into memory instead of streaming
+* For the ambitious: multithreaded evaluation and/or building.
+
