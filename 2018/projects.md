@@ -214,3 +214,28 @@ a stderr line starting with e.g. `{N}phase:configurePhase`.
 The overall goal would be to make building from source more approachable and
 more amenable to debug.
 
+### Improve Python support
+
+Currently we have python 2.6 - 3.4 and PyPy support in Nix. Improving Python
+support is an ongoing effort, see https://github.com/NixOS/nixpkgs/pull/1467
+
+Main work would include:
+
+* Add wheels support https://github.com/NixOS/nixpkgs/issues/329
+* Improve documentation at http://nixos.org/nixpkgs/manual/#python
+* Update PyPi2nix script for automated packaging https://github.com/garbas/pypi2nix
+
+Other improvements would include:
+
+* Add python modules support for python 3 and PyPy (like we have it for Python
+  2.7)
+* Split out usable functions for software having python bindings but not using
+  distutils/setuptools
+
+**Note**: talk to the mentor to set a goal of what improvements fit in 3 months.
+
+### Improve support for other programming languages
+
+(The same as Python above, for every major programming language in need of some
+improvement, *mutatis mutandis*)
+
