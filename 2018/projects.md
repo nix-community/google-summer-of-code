@@ -257,3 +257,52 @@ stress-test and also a way to popularize it. In a more ambitious goal, we can do
 something as Gentoo and Debian already did, porting a whole system above FreeBSD
 kernel.
 
+## Build an Android distribution
+
+Building a custom from for Android often involves sourcing opaque files from internet fora.
+Nix would be an ideal system to describe how all these different sources should be combined
+and compiled into an Android ROM.
+
+## Hercules CI
+Work on the (Haskell) implementation of [Hecules CI](https://github.com/hercules-ci/hercules)
+
+## Efficient binary deployments for e.g. IoT devices
+Mentor: @moretea
+Compute efficient diff between two (resurcive) derivations using a bsd-diff like algorithm, and
+expand in-memory with low resoruces. Can be used to imporove update efficiiency for IoT like devices.
+
+## Home Manager improvements
+[Home manager](https://github.com/rycee/home-manager) appears to be one of the most commonly used ways to
+have a declarative user profile. 
+Options are to add extra programs and configuration settings, but it might be interesting to offer
+a `home-shell` that in functionality is similar to nix-shell, but extends the scope to include settings
+for programs (such as XDG). Other settings (like .vim) could be managed via bind namespaces and
+overlay file systems.
+
+## Kubernetes CRI Interface
+mentor: @moretea
+Implement the Container Runtime Interface (CRI) which will enable Kubernetes to run Nix native containers,
+without depending on other packaging formats such as Docker containers, that destroy the graph model of
+dependencies offered by Nix.
+
+## Distributed binary cache
+mentor: @moretea
+Required part of a different approach to a distributed build system for Nix.
+
+This distributed binary cache will run as a set of daemons on build nodes.
+A distributed database (e.g. etcd) is used to keep track of which nodes has build which derivations.
+A local http server, acting as a binary cache endpoint, will query the distributed database to find out
+which other build nodes have this file availble, and fetch it from one of those machines.
+
+## "Distributed" build system suitable to be run as e.g. GitLab runners.
+Glue code that together with the project described in 'Distributed binary cache', results in a build system that can be integrated into external tools like GitLab, GitHub and BitBucket.
+
+## Implement merge queue for 'evergreen' master
+Merge queues offer two benefits:
+- Master will allways build and be availble.
+- Automatic batching of PR's to reduce total required build time (by not having to run all tests)
+
+## Better support for documentation of library functions
+mentor: @moretea
+
+Library functions are only documented in the source code. Come up with some way to make them discoverable (via a function similar to `builtins.functionArgs`)
