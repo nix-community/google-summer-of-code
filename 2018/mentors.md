@@ -2,4 +2,4 @@
 
 This is the list of all the mentors available in GSoC.
 
-* zimbatm
+* [zimbatm](https://github.com/zimbatm)
