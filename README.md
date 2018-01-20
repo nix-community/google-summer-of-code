@@ -7,6 +7,7 @@ This repo is used to coordinate efforts around the [Google Summer of Code progra
 * [Project Ideas](2018/projects.md)
 * [Mentors](2018/mentors.md)
 * [Students](2018/students.md)
+* [Program Rules](https://summerofcode.withgoogle.com/rules/)
 
 ## Contribute
 
