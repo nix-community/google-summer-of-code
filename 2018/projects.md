@@ -13,6 +13,11 @@ components:
 ## Nix
 Nix is a DSL to describe builds and a package manager.
 
+### Efficient binary deployments for e.g. IoT devices
+Mentor: @moretea
+Compute efficient diff between two (resurcive) derivations using a bsd-diff like algorithm, and
+expand in-memory with low resoruces. Can be used to imporove update efficiiency for IoT like devices.
+
 ### langserver.org implementation for nix
 mentor: @moretea
 
@@ -42,6 +47,16 @@ system configuration management to networks and adds provisioning.
 
 
 ## Other Projects
+
+### Documentation improvement project
+mentor: @moretea
+
+Currently, we have reference manuals, a wiki and blog posts scattered over the
+internet. Other successfull open source projects provide tutorials and guides
+to start learning the system, and to learn how to achieve certain objectives.
+This projects would involve both writing the documentation, and given
+the technical capabilities of nix, also add tests to make sure that the
+documentation will not bit rot over time.
 
 ### Kubernetes CRI Interface
 mentor: @moretea
@@ -310,11 +325,6 @@ and compiled into an Android ROM.
 
 ### Hercules CI
 Work on the (Haskell) implementation of [Hecules CI](https://github.com/hercules-ci/hercules)
-
-### Efficient binary deployments for e.g. IoT devices
-Mentor: @moretea
-Compute efficient diff between two (resurcive) derivations using a bsd-diff like algorithm, and
-expand in-memory with low resoruces. Can be used to imporove update efficiiency for IoT like devices.
 
 ### Home Manager improvements
 [Home manager](https://github.com/rycee/home-manager) appears to be one of the most commonly used ways to
