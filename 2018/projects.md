@@ -12,6 +12,13 @@ components:
 ## Nix
 Nix is a DSL to describe builds and a package manager.
 
+### langserver.org implementation for nix
+mentor: @moretea
+
+http://langserver.org/ - would solve a bunch of IDE problems, though
+not indentation and syntax highlighting. Might be too complicated.
+
+
 ## Nixpkgs
 Nixpkgs is a curated set of descriptions that describe how software packages
 must be build, and specifiying all the required dependencies.
@@ -150,11 +157,6 @@ creating users and selecting desktop environments
 
 **Note**: it might be worth adapting existing code base of an already existent
 installer to not reinvent partitioning
-
-### langserver.org implementation for nix
-
-http://langserver.org/ - would solve a bunch of IDE problems, though
-not indentation and syntax highlighting. Might be too complicated.
 
 ### Private files in the nix store
 
