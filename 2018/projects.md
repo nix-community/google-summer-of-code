@@ -30,15 +30,19 @@ system configuration management to networks and adds provisioning.
 
 <hr>
 
-## Make the hnix nix interpreter work with nixpkgs.
+## Abandoned project proposals
+The follow idea's have not been picked up by a potential mentor yet.
+You can still propose to target one of these projects, but be sure to
+communicate with us to make sure that there will be a mentor available.
 
+### Make the hnix nix interpreter work with nixpkgs.
 We have a
 [Nix interpreter written in Haskell](https://github.com/jwiegley/hnix)
 but it can't currently build derivations. The idea is to make it fully nix compatible.
 
-## Define and document API to nix-daemon
+### Define and document API to nix-daemon
 
-## Deterministic Builds
+### Deterministic Builds
 
 Nixpkgs has a great feature where every build is reproducible, which means that
 if you and I both build a package from the repository with the same nixpkgs git
@@ -86,7 +90,7 @@ expanding deterministic builds.
   the Nixpkgs/NixOS manual are fine. Finally, it's possible in the process we'll
   need to work with upstreams or incorporate patches to our core utilities.
 
-## Localization
+### Localization
 
 Nix / NixOS / NixOps are getting a lot of attention, unfortunately all the
 documentation which exists so far is in English. The purpose of this project is
@@ -109,7 +113,7 @@ but not limited to:
 * Localization of ~100 package descriptions.
 * Localization of ~100 NixOS options.
 
-## Peer-to-Peer substitutes
+### Peer-to-Peer substitutes
 
 In general, Linux distributions have multiple mirrors to provide backup for
 sources / binaries. Nix has a model which gives it the possibility to ask
@@ -133,7 +137,7 @@ The goal of this project, is to create a new binary substitute based on a
 decentralize and anonymized P2P, such as Tribler, which serve the content of the
 nix store to other Nix users.
 
-## Graphical and text-mode installers for NixOS
+### Graphical and text-mode installers for NixOS
 
 Currently, NixOS doesn't have any automatic, fancy installer. The goal would be
 to create a minimal one, that does:
@@ -147,12 +151,12 @@ creating users and selecting desktop environments
 **Note**: it might be worth adapting existing code base of an already existent
 installer to not reinvent partitioning
 
-## langserver.org implementation for nix
+### langserver.org implementation for nix
 
 http://langserver.org/ - would solve a bunch of IDE problems, though
 not indentation and syntax highlighting. Might be too complicated.
 
-## Private files in the nix store
+### Private files in the nix store
 
 Currently, all files in the nix store are world-readable, which means that NixOS
 configurations that need passwords or other credentials need to point to paths
@@ -162,7 +166,7 @@ way to fix this limitation.
 Some discussion and existing work on the issue can be found at:
 https://github.com/NixOS/nix/issues/8
 
-## Multiple outputs infrastructure in nixpkgs
+### Multiple outputs infrastructure in nixpkgs
 
 Nix has a feature known as "multiple outputs", where a single derivation can
 produce multiple outputs which can be downloaded and garbage-collected
@@ -177,15 +181,13 @@ benefit.
 Note: This has already been partially done in the closure-size branch:
 https://github.com/NixOS/nixpkgs/pull/7701
 
-## Distributed nixops deployments
+### Distributed nixops deployments
 
 Currently NixOps state is all stored in a local sqlite database, so all
 deployment has to be managed from one central machine. A good mechanism for
 sharing that state would allow multiple users to manage the same deployments
 from their own machines.
 
-
-## Improvements
 
 ### Improve Nix and rewrite Perl scripts in C++
 
@@ -266,7 +268,7 @@ Other improvements would include:
 (The same as Python above, for every major programming language in need of some
 improvement, *mutatis mutandis*)
 
-## Promote independence from systemd
+### Promote independence from systemd
 
 Systemd is a hot, polemical, flamewar-prone topic. There is a lot of criticism
 about it, mainly about being bloated and hard to maintain. And arguably systemd
@@ -277,28 +279,28 @@ http://lists.science.uu.nl/pipermail/nix-dev/2014-December/015361.html
 The goal of that subject is to promote independence of systemd, and using some
 sane default as s6 or even Gentoo's OpenRC suite.
 
-## NixOS-kFreeBSD
+### NixOS-kFreeBSD
 
 Port Nix and Nixpkgs for other Unix-like open source systems would be a good
 stress-test and also a way to popularize it. In a more ambitious goal, we can do
 something as Gentoo and Debian already did, porting a whole system above FreeBSD
 kernel.
 
-## Build an Android distribution
+### Build an Android distribution
 
 Building a custom from for Android often involves sourcing opaque files from internet fora.
 Nix would be an ideal system to describe how all these different sources should be combined
 and compiled into an Android ROM.
 
-## Hercules CI
+### Hercules CI
 Work on the (Haskell) implementation of [Hecules CI](https://github.com/hercules-ci/hercules)
 
-## Efficient binary deployments for e.g. IoT devices
+### Efficient binary deployments for e.g. IoT devices
 Mentor: @moretea
 Compute efficient diff between two (resurcive) derivations using a bsd-diff like algorithm, and
 expand in-memory with low resoruces. Can be used to imporove update efficiiency for IoT like devices.
 
-## Home Manager improvements
+### Home Manager improvements
 [Home manager](https://github.com/rycee/home-manager) appears to be one of the most commonly used ways to
 have a declarative user profile. 
 Options are to add extra programs and configuration settings, but it might be interesting to offer
@@ -306,13 +308,13 @@ a `home-shell` that in functionality is similar to nix-shell, but extends the sc
 for programs (such as XDG). Other settings (like .vim) could be managed via bind namespaces and
 overlay file systems.
 
-## Kubernetes CRI Interface
+### Kubernetes CRI Interface
 mentor: @moretea
 Implement the Container Runtime Interface (CRI) which will enable Kubernetes to run Nix native containers,
 without depending on other packaging formats such as Docker containers, that destroy the graph model of
 dependencies offered by Nix.
 
-## Distributed binary cache
+### Distributed binary cache
 mentor: @moretea
 Required part of a different approach to a distributed build system for Nix.
 
@@ -321,15 +323,15 @@ A distributed database (e.g. etcd) is used to keep track of which nodes has buil
 A local http server, acting as a binary cache endpoint, will query the distributed database to find out
 which other build nodes have this file availble, and fetch it from one of those machines.
 
-## "Distributed" build system suitable to be run as e.g. GitLab runners.
+### "Distributed" build system suitable to be run as e.g. GitLab runners.
 Glue code that together with the project described in 'Distributed binary cache', results in a build system that can be integrated into external tools like GitLab, GitHub and BitBucket.
 
-## Implement merge queue for 'evergreen' master
+### Implement merge queue for 'evergreen' master
 Merge queues offer two benefits:
 - Master will allways build and be availble.
 - Automatic batching of PR's to reduce total required build time (by not having to run all tests)
 
-## Better support for documentation of library functions
+### Better support for documentation of library functions
 mentor: @moretea
 
 Library functions are only documented in the source code. Come up with some way to make them discoverable (via a function similar to `builtins.functionArgs`)
