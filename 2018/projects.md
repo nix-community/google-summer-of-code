@@ -39,6 +39,12 @@ system configuration management to networks and adds provisioning.
 
 ## Other Projects
 
+### Kubernetes CRI Interface
+mentor: @moretea
+Implement the Container Runtime Interface (CRI) which will enable Kubernetes to run Nix native containers,
+without depending on other packaging formats such as Docker containers, that destroy the graph model of
+dependencies offered by Nix.
+
 <hr>
 
 ## Abandoned project proposals
@@ -313,12 +319,6 @@ Options are to add extra programs and configuration settings, but it might be in
 a `home-shell` that in functionality is similar to nix-shell, but extends the scope to include settings
 for programs (such as XDG). Other settings (like .vim) could be managed via bind namespaces and
 overlay file systems.
-
-### Kubernetes CRI Interface
-mentor: @moretea
-Implement the Container Runtime Interface (CRI) which will enable Kubernetes to run Nix native containers,
-without depending on other packaging formats such as Docker containers, that destroy the graph model of
-dependencies offered by Nix.
 
 ### Distributed binary cache
 mentor: @moretea
