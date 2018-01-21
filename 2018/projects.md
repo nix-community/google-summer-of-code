@@ -1,7 +1,34 @@
-# Ideas for 2018 GSOC projects
+# Ideas for 2018 GSoC projects
 
-We don't know the deadline yet. Based on the 2017 deadline it'll
-probably be beginning of February.
+The Nix project actually consists of several components that build on top of
+each other. The list of idea's for the 2018 GSoC are organized by those
+components:
+
+- [Nix package manager & build DSL](#Nix)
+- [Nixpkgs package collection](#Nixpkgs)
+- [NixOS operating system](#NixOS)
+- [NixOps (cloud) deployment system](#NixOps)
+
+## Nix
+Nix is a DSL to describe builds and a package manager.
+
+## Nixpkgs
+Nixpkgs is a curated set of descriptions that describe how software packages
+must be build, and specifiying all the required dependencies.
+
+## NixOS
+NixOS is a Linux distribution with a unique approach to package and
+configuration management.  Built on top of the
+[Nix package manager](https://nixos.org/nix), it is completely declarative,
+makes upgrading systems reliable, and has
+[many other advantages](https://nixos.org/about.html).
+
+## NixOps
+NixOps is a tool for deploying sets of NixOS Linux machines, either to real
+hardware or to virtual machines.  It extends NixOS’s declarative approach to
+system configuration management to networks and adds provisioning.
+
+<hr>
 
 ## Make the hnix nix interpreter work with nixpkgs.
 
