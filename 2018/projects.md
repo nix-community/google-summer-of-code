@@ -19,10 +19,14 @@ mentor: @moretea
 http://langserver.org/ - would solve a bunch of IDE problems, though
 not indentation and syntax highlighting. Might be too complicated.
 
-
 ## Nixpkgs
 Nixpkgs is a curated set of descriptions that describe how software packages
 must be build, and specifiying all the required dependencies.
+
+### Better support for documentation of library functions
+mentor: @moretea
+
+Library functions are only documented in the source code. Come up with some way to make them discoverable (via a function similar to `builtins.functionArgs`)
 
 ## NixOS
 NixOS is a Linux distribution with a unique approach to package and
@@ -336,8 +340,3 @@ Glue code that together with the project described in 'Distributed binary cache'
 Merge queues offer two benefits:
 - Master will allways build and be availble.
 - Automatic batching of PR's to reduce total required build time (by not having to run all tests)
-
-### Better support for documentation of library functions
-mentor: @moretea
-
-Library functions are only documented in the source code. Come up with some way to make them discoverable (via a function similar to `builtins.functionArgs`)
