@@ -8,6 +8,7 @@ components:
 - [Nixpkgs package collection](#Nixpkgs)
 - [NixOS operating system](#NixOS)
 - [NixOps (cloud) deployment system](#NixOps)
+- [Other Projects](#other-projects)
 
 ## Nix
 Nix is a DSL to describe builds and a package manager.
@@ -34,6 +35,9 @@ makes upgrading systems reliable, and has
 NixOps is a tool for deploying sets of NixOS Linux machines, either to real
 hardware or to virtual machines.  It extends NixOS’s declarative approach to
 system configuration management to networks and adds provisioning.
+
+
+## Other Projects
 
 <hr>
 
