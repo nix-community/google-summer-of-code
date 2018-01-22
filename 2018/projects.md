@@ -41,6 +41,8 @@ makes upgrading systems reliable, and has
 [many other advantages](https://nixos.org/about.html).
 
 ## NixOps
+mentor: @rbvermaa
+
 NixOps is a tool for deploying sets of NixOS Linux machines, either to real
 hardware or to virtual machines.  It extends NixOS’s declarative approach to
 system configuration management to networks and adds provisioning.
