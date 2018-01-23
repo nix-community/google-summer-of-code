@@ -1,8 +1,11 @@
 # Ideas for 2018 GSoC projects
 
-The Nix project actually consists of several components that build on top of
-each other. The list of idea's for the 2018 GSoC are organized by those
-components:
+Nix is a composable build system and the community actually consists of several
+components that build on top of each other.
+
+This is our idea page for Google Summer of Code 2018. See the [GSoC timeline](https://developers.google.com/open-source/gsoc/timeline) for important dates.
+
+## TOC
 
 - [Nix package manager & build DSL](#Nix)
 - [Nixpkgs package collection](#Nixpkgs)

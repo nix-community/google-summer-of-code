@@ -10,6 +10,7 @@ GSoC is a program that sponsors students to work on Open Source projects in the 
 * [Mentors](2018/mentors.md)
 * [Students](2018/students.md)
 * [Program Rules](https://summerofcode.withgoogle.com/rules/)
+* [Timeline](https://developers.google.com/open-source/gsoc/timeline)
 
 ## Communication
 
