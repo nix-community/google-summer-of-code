@@ -14,7 +14,7 @@ GSoC is a program that sponsors students to work on Open Source projects in the 
 
 ## Communication
 
-Join us on Freenode #nix-gsoc or create an issue on this repo to discuss a specific topic.
+Join us on Freenode [#nix-gsoc](irc://irc.freenode.net/nix-gsoc) or create an issue on this repo to discuss a specific topic.
 
 ## Contribute
 
