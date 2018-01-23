@@ -14,9 +14,10 @@ components:
 Nix is a DSL to describe builds and a package manager.
 
 ### Efficient binary deployments for e.g. IoT devices
-Mentor: @moretea
-Compute efficient diff between two (resurcive) derivations using a bsd-diff like algorithm, and
-expand in-memory with low resoruces. Can be used to imporove update efficiiency for IoT like devices.
+mentor: @moretea
+
+Compute efficient diff between two (recursive) derivations using a bsd-diff like algorithm, and
+expand in-memory with low resources. Can be used to improve update efficiency on IoT-like devices.
 
 ### langserver.org implementation for nix
 mentor: @moretea
@@ -24,9 +25,43 @@ mentor: @moretea
 http://langserver.org/ - would solve a bunch of IDE problems, though
 not indentation and syntax highlighting. Might be too complicated.
 
+### Peer-to-Peer substitutes
+mentor: zimbatm
+
+In general, Linux distributions have multiple mirrors to provide backup for
+sources / binaries. Nix has a model which gives it the possibility to ask
+trusted remote (or signed files from untrusted sources) about the hash of the
+build output for one derivation (recipe), and then the binary can be downloaded
+from any untrusted source. Being able to download a binary from any source
+implies that we do not have to rely on mirrors for downloading the build
+results, and that we can use decentralized ideas, such as P2P networks. Another
+issue, inherent with this, is to ensure that we have anonymity among the persons
+of such network. Not having anonymity implies that an attacker can use such
+network to analyze if a server is vulnerable because it is using an outdated
+version of bash / openssl.
+
+A decentralized and anonymized P2P would help by:
+
+* Making popular packages/versions persistent.
+* Improve download speed, even from China (no need to "sneakernet").
+* Reduce load from cache.nixos.org .
+
+The goal of this project, is to create a new binary substitute based on a
+decentralize and anonymized P2P, such as Tribler, which serve the content of the
+nix store to other Nix users.
+
 ## Nixpkgs
 Nixpkgs is a curated set of descriptions that describe how software packages
 must be build, and specifiying all the required dependencies.
+
+### Generalize the module system
+mentor: @zimbatm
+
+The nixpkgs module system is currently only used by NixOS and isn't completely generalized.
+
+Simplify the module system so that it can be used to declare config file data structures. Generalize the activation script so that it can be used on other targets.
+
+
 
 ### Better support for documentation of library functions
 mentor: @moretea
@@ -47,6 +82,17 @@ NixOps is a tool for deploying sets of NixOS Linux machines, either to real
 hardware or to virtual machines.  It extends NixOS’s declarative approach to
 system configuration management to networks and adds provisioning.
 
+### Terraform providers in NixOps
+mentor: @zimbatm
+
+Terraform has a wide and tested plugin ecosystem which could be used by NixOps. This would involve reverse-engineering the terraform providers plugin protocol to expose their resources and properties in nixops.
+
+### Pluggable state storage
+mentor: @zimbatm
+
+NixOps currently stores it's execution state into a sqlite3 database. This makes it difficult to share state between multiple users of nixops.
+
+Introduce a pluggable state store with S3 as the first implementation. If time permits it, add a locking system to it.
 
 ## Other Projects
 
@@ -151,30 +197,6 @@ but not limited to:
 * Localization of ~100 package descriptions.
 * Localization of ~100 NixOS options.
 
-### Peer-to-Peer substitutes
-
-In general, Linux distributions have multiple mirrors to provide backup for
-sources / binaries. Nix has a model which gives it the possibility to ask
-trusted remote (or signed files from untrusted sources) about the hash of the
-build output for one derivation (recipe), and then the binary can be downloaded
-from any untrusted source. Being able to download a binary from any source
-implies that we do not have to rely on mirrors for downloading the build
-results, and that we can use decentralized ideas, such as P2P networks. Another
-issue, inherent with this, is to ensure that we have anonymity among the persons
-of such network. Not having anonymity implies that an attacker can use such
-network to analyze if a server is vulnerable because it is using an outdated
-version of bash / openssl.
-
-A decentralized and anonymized P2P would help by:
-
-* Making popular packages/versions persistent.
-* Improve download speed, even from China (no need to "sneakernet").
-* Reduce load from cache.nixos.org .
-
-The goal of this project, is to create a new binary substitute based on a
-decentralize and anonymized P2P, such as Tribler, which serve the content of the
-nix store to other Nix users.
-
 ### Graphical and text-mode installers for NixOS
 
 Currently, NixOS doesn't have any automatic, fancy installer. The goal would be
@@ -213,28 +235,6 @@ benefit.
 
 Note: This has already been partially done in the closure-size branch:
 https://github.com/NixOS/nixpkgs/pull/7701
-
-### Distributed nixops deployments
-
-Currently NixOps state is all stored in a local sqlite database, so all
-deployment has to be managed from one central machine. A good mechanism for
-sharing that state would allow multiple users to manage the same deployments
-from their own machines.
-
-
-### Improve Nix and rewrite Perl scripts in C++
-
-Currently Nix as a tool could use some improvement, there are many issues and
-basic features that should be worked on:
-
-* Getting rid of Perl dependency
-* Inline docstring support
-* Support for channel authentication (http simple authentication)
-* Package query caching
-* More user friendly and modern interface and output (with colors)
-* Support for channel generation with one command
-* Bindings for other languages
-* More sane defaults
 
 ### Low-level improvements to nix performance
 
