@@ -127,6 +127,9 @@ We have a
 [Nix interpreter written in Haskell](https://github.com/jwiegley/hnix)
 but it can't currently build derivations. The idea is to make it fully nix compatible.
 
+### Make the nix.rs nix interpreter work with nixpkgs.
+There is a(nother) [Nix interpreter written in Rust](https://github.com/solson/nixrs) out there. The idea is to make it fully nix compatible.
+
 ### Define and document API to nix-daemon
 
 ### Deterministic Builds
