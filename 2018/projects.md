@@ -117,7 +117,7 @@ dependencies offered by Nix.
 
 <hr>
 
-## Abandoned project proposals
+## Project proposals without mentors
 The follow idea's have not been picked up by a potential mentor yet.
 You can still propose to target one of these projects, but be sure to
 communicate with us to make sure that there will be a mentor available.
