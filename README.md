@@ -1,3 +1,7 @@
+Note: We moved the repo to [the NixOS org](https://github.com/nixos/gsoc) in an effort of making our GSoC participation more official.
+
+---
+
 # GSoC projects
 
 This repo is used to coordinate efforts around the [Google Summer of Code][1] (GSoC) program in the Nix community.
